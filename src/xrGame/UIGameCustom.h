@@ -131,6 +131,13 @@ public:
 	void RemoveCustomStatic(const char* id);
 	void CommonMessageOut(const char* text);
 
+    std::map<std::string, CustomShape> custom_shapes;
+	void AddCustomShapeToRender(LPCSTR name, ::luabind::object lua_shape);
+    void RemoveCustomShapeToRender(LPCSTR name);
+    bool HasCustomShape(LPCSTR name);
+    void UpdateCustomShape(LPCSTR name, ::luabind::object lua_poly);
+	void DrawCustomShapes();
+
 	virtual void ChangeTotalMoneyIndicator(const char* newMoneyString)
 	{
 	}
